@@ -20,7 +20,7 @@ pub fn resolve_day_1(input: []const u8) !void {
         var i: usize = 0;
         while (i < line.len) {
             const char = line[i];
-            if (char >= '0' and char <= '9') {
+            if (is_number(char)) {
                 first = char;
                 break;
             }
@@ -30,7 +30,7 @@ pub fn resolve_day_1(input: []const u8) !void {
         i = line.len - 1;
         while (i >= 0) {
             const char = line[i];
-            if (char >= '0' and char <= '9') {
+            if (is_number(char)) {
                 last = char;
                 break;
             }
@@ -46,4 +46,8 @@ pub fn resolve_day_1(input: []const u8) !void {
         sum += result;
     }
     std.debug.print("{d}\n", .{sum});
+}
+
+pub fn is_number(char: u8) bool {
+    return char >= '0' and char <= '9';
 }
