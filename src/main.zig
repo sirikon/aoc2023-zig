@@ -5,7 +5,16 @@ pub fn main() !void {
 }
 
 pub fn day_1() !void {
-    std.debug.print("Hello Day 1\n", .{});
+    const input_a =
+        \\1abc2
+        \\pqr3stu8vwx
+        \\a1b2c3d4e5f
+        \\treb7uchet
+    ;
+
+    for (input_a) |char| {
+        std.debug.print("{d}\n", .{char});
+    }
 }
 
 test "simple test" {
